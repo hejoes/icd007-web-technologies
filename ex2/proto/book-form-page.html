@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a book</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body id="book-form-page">
+    <div class="container">
+      <header>
+        <nav class="menu">
+          <a href="index.html" id="book-list-link">Raamatud</a>
+          <a href="book-form-page.html" id="book-form-link">Lisa raamat</a>
+          <a href="author-list.html" id="author-list-link">Autorid</a>
+          <a href="author-form-page.html" id="author-form-link">Lisa autor</a>
+        </nav>
+      </header>
+
+      <section>
+        <form class="form" action="">
+          <div class="form-cell">
+            <label class="label-cell" for="title">Pealkiri:</label>
+            <input class="input-cell" name="title" type="text" />
+          </div>
+
+          <div class="form-cell">
+            <label class="label-cell" for="author1">Autor 1:</label>
+            <select class="input-cell" name="author1" id="">
+              <option value=""></option>
+              <option value="1">Elisabeth Robson</option>
+              <option value="2">Eric Freeman</option>
+              <option value="3">Jennifer Robbins</option>
+            </select>
+          </div>
+
+          <div class="form-cell">
+            <label class="label-cell" for="author2">Autor 2:</label>
+            <select class="input-cell" name="author2" id="">
+              <option value=""></option>
+              <option value="1">Elisabeth Robson</option>
+              <option value="2">Eric Freeman</option>
+              <option value="3">Jennifer Robbins</option>
+            </select>
+          </div>
+
+          <div class="form-cell">
+            <label class="label-cell" for="grade">Hinne:</label>
+            <input class="radio-cell" type="radio" name="grade" value="1" />1
+            <input class="radio-cell" type="radio" name="grade" value="2" />2
+            <input type="radio" name="grade" value="3" />3
+            <input class="radio-cell" type="radio" name="grade" value="4" />4
+            <input class="radio-cell" type="radio" name="grade" value="5" />5
+          </div>
+
+          <div class="form-cell">
+            <label class="label-cell" for="read">Loetud:</label>
+            <input type="checkbox" name="read" id="" />
+          </div>
+
+          <input
+            type="submit"
+            name="submitButton"
+            value="Salvesta"
+            class="submitbtn"
+          />
+        </form>
+      </section>
+
+      <footer>ICD0007 Projekt</footer>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Add a author</title>
+
+    <link rel="stylesheet" href="css/style.css" />
+  </head>
+
+  <body id="author-form-page">
+    <div class="container">
+      <header>
+        <nav class="menu">
+          <a href="index.html" id="book-list-link">Raamatud</a>
+          <a href="book-form-page.html" id="book-form-link">Lisa raamat</a>
+          <a href="author-list.html" id="author-list-link">Autorid</a>
+          <a href="author-form-page.html" id="author-form-link">Lisa autor</a>
+        </nav>
+      </header>
+
+      <section>
+        <form class="form" action="">
+          <div class="form-cell">
+            <label class="label-cell" for="title">Eesnimi:</label>
+            <input class="input-cell" name="title" type="text" />
+          </div>
+
+          <div class="form-cell">
+            <label class="label-cell" for="title">Perekonnanimi:</label>
+            <input class="input-cell" name="title" type="text" />
+          </div>
+
+          <div class="form-cell">
+            <label class="label-cell" for="grade">Hinne:</label>
+            <input class="radio-cell" type="radio" name="grade" value="1" />1
+            <input class="radio-cell" type="radio" name="grade" value="2" />2
+            <input type="radio" name="grade" value="3" />3
+            <input class="radio-cell" type="radio" name="grade" value="4" />4
+            <input class="radio-cell" type="radio" name="grade" value="5" />5
+          </div>
+
+          <input
+            type="submit"
+            name="submitButton"
+            value="Salvesta"
+            class="submitbtn"
+          />
+        </form>
+      </section>
+
+      <footer>ICD0007 Projekt</footer>
+    </div>
+  </body>
+</html>

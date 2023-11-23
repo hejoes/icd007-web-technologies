@@ -1,0 +1,13 @@
+#a, #d {
+    color: green;
+    font-style: normal;
+}
+
+p, nav > span {
+    color: red;
+    font-style: italic;
+}
+
+.b, #b {
+    color: blue;
+}

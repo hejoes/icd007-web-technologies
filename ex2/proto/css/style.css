@@ -1,0 +1,85 @@
+* {
+  box-sizing: border-box;
+  margin: 0px;
+  padding: 0px;
+}
+html {
+  font-size: 62.5%;
+}
+.container {
+  margin: 0 auto;
+  max-width: 65rem;
+  margin-top: 1rem;
+  font-size: 1.8rem;
+}
+
+.menu-a::after {
+  content: "|";
+  margin-left: 1rem;
+  margin-right: -1.5rem;
+}
+.menu-a:last-child::after {
+  display: none;
+}
+.menu-a {
+  margin-left: 2rem;
+  text-decoration: none;
+}
+.menu,
+footer {
+  background-color: #cdedf6;
+  border-radius: 0.5rem;
+  margin-bottom: 2rem;
+}
+.author-header {
+  margin-bottom: 0.5rem;
+}
+
+footer {
+  margin-top: 5rem;
+  padding: 0.5rem 0rem;
+}
+/* INDEX.HTML AND AUTHOR_LIST STUFF */
+.breaker {
+  background-color: #666;
+  padding-top: 0.2rem;
+  margin-bottom: 1rem;
+}
+
+.main,
+.author-header {
+  display: grid;
+  grid-template-columns: 33% 50% 17%;
+}
+
+.score-filled {
+  color: darkorange;
+}
+
+/* Book_form_page */
+.form {
+  max-width: 75%;
+  margin: 0 auto;
+}
+
+.form-cell {
+  display: flex;
+}
+.submitbtn {
+  background-color: #007bff;
+  border: none;
+  color: white;
+  padding: 0.7rem 2rem;
+  border-radius: 10rem;
+  cursor: pointer;
+}
+.label-cell {
+  margin-right: 2rem;
+  margin-bottom: 0.7rem;
+}
+.input-cell {
+  text-align: left;
+  width: 25rem;
+  margin-bottom: 0.5rem;
+  padding: 0.5rem 0px;
+}

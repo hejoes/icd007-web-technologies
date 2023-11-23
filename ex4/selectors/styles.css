@@ -1,0 +1,18 @@
+.c, div span.b, div section p {
+    color: blue;
+    font-style: italic;
+}
+
+.b, div p {
+    color: red;
+    font-style: normal;
+}
+
+.a {
+    color: green;
+    font-style: italic;
+}
+
+
+/*Mõistlik eksami ajal vaadata millist värvi kõige rohkem ja siis see yle kirjutada
+, meie puhul maini võiks blue italicuks teha*/

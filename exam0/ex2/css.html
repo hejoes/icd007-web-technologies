@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+    <title></title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <p class="b">1</p> <!-- blue, italic -->
+
+    <div id="a" class="a"><span>2</span></div> <!-- green, normal -->
+
+    <div><p id="b" class="a"><span>3</span></p></div> <!-- blue, italic -->
+
+    <div class="a">4</div> <!-- black, normal -->
+
+    <div><p id="d">5</p></div> <!-- green, normal -->
+
+    <nav>
+        <span>6</span>       <!-- red, italic  -->
+        <div>
+            <span>7</span>   <!-- black, normal  -->
+        </div>
+    </nav>
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <br><br>
+
+    <script>
+
+        let correct = 0;
+
+        correct += style('1', 'blue', 'italic');
+        correct += style('2', 'green', 'normal');
+        correct += style('3', 'blue', 'italic');
+        correct += style('4', 'black', 'normal');
+        correct += style('5', 'green', 'normal');
+        correct += style('6', 'red', 'italic');
+        correct += style('7', 'black', 'normal');
+
+        const correctToPoints = [0, 0, 0, 1, 3, 5, 7, 8];
+
+        const message = `${correct} correct, ${correctToPoints[correct]} of 8 points`;
+
+        document.write(message);
+
+        function style(number, color, fontStyle) {
+            const style = findStyle(document, number);
+            return (style.fontStyle === fontStyle
+                && rgbToColor(style.color) === color) ? 1 : 0;
+        }
+
+        function findStyle(node, num) {
+            if (node.nodeType === 3 && node.nodeValue === num) {
+                return getComputedStyle(node.parentNode);
+            }
+
+            for (let child of node.childNodes) {
+                const style = findStyle(child, num);
+                if (style) {
+                    return style;
+                }
+            }
+        }
+
+        function rgbToColor(rgbString) {
+            let [r, g, b] = rgbString
+                .replace(/[^\d,]/g, '')
+                .split(',')
+                .map(string => parseInt(string))
+                .map(num => Math.min(1, num));
+
+            return ['black', 'blue', 'green', undefined, 'red'][4 * r + 2 * g + b];
+        }
+
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,105 @@
+Teooriaküsimused
+
+  Vastake võimalikult täpselt sellele, mida on küsitud.
+  Iga küsimuse vastus peab jääma alla 200 märgi.
+  Iga küsimus annab kuni 5 punkti.
+
+  1. Relatsioonilises andmebaasis peaks üks mitmele seose puhul (nt isik ja
+     tema telefonid), hoidma seotud andmeid eraldi tabelis. Miks?
+
+    andmete terviklikkuse säilitamiseks, tõhusa päringute tegemise hõlbustamiseks, aitab vältida andmete dubleerimist, tagab andmete terviklikkuse, lihtsustab päringuid
+
+  2. Mida tähendab css-is ühik rem (nt. width: 1rem)?
+
+   põhineb juurelementi (HTML'i juurelemendi ehk "html" elemendi) fonti suurusel. Ühe "rem" ühikuga määratud väärtus võrdub juurelemendi fonti suurusega..
+
+  3. Kuidas on seotud küpsised (cookie) ja Cross-Site Request Forgery rünnak?
+
+     CSRF attacks can exploit existing cookies to perform unauthorized actions on behalf of a user.
+
+  4. Mis probleemi lahendab DTO (Data Transfer Object) muster?
+
+     solves the problem of transferring data between different layers or components of an application by encapsulating the data into a single object.
+
+Ülesanne 1 (6 punkti)
+
+  Html failide struktuur asub kataloogis "ex1".
+
+  Kirjutage järgmised relatiivsed lingid:
+
+  index.html -> e.html (failis index.html on link, mis viitab failile e.html)
+  e.html -> f.html
+  f.html -> d.html
+  d.html -> b.html
+
+  Kirjutage fails d.html olevale lingile nimega "shortest self" lühim
+  võimalik link failile d.html.
+
+  Kirjutage fails d.html olevale lingile nimega "shortest d/index.html" lühim
+  võimalik link failile "d/index.html".
+
+  Fail f.php näitab välja faili e.html sisu. Failis e.html on "img" tag, mis peaks
+  viitama falile html-logo.png (kataloogis c). Kirjtage "img" tag-ile korrektne
+  "src" atribuudi väärtus nii, et faili f.php avamine näitaks bruseris logo.
+
+  Lahenduse kontrollimiseks on test ex1/tests.php
+  Test eeldab, et failid on saadaval aadressilt http://localhost:8080/ex1/
+  Seega testi kasutamiseks käivitage enne testi käivitamist php server eksami juurkataloogist.
+  (php -S localhost:8080).
+
+Ülesanne 2 (8 punkti)
+
+  Failis ex2/css.html on numbrid 1-7. Muutke faili styles.css nii, et
+  täidetud oleks allolevad tingimused.
+
+    • 1 on sinine ja italic
+    • 2 on roheline ja mitte italic
+    • 3 on sinine ja italic
+    • 4 on must (värv pole määratud) ja mitte italic
+    • 5 on roheline ja mitte italic
+    • 6 on punane ja italic
+    • 7 on must ja mitte italic
+
+  Faili css.html muuta ei tohi.
+  Failis styles.css võite muuta ainult kommentaariga märgitud kohti (css selector-eid).
+
+Ülesanne 3 (24 punkti)
+
+  Kataloogis ex3 on osa rakendusest, mille kirjeldus järgneb ja mille peate lõpuni kirjutama.
+
+  NB! Muuta võite ainult faili index.php.
+
+  Esmakordsel pöördumisel peaks näidatama värvi valiku vormi (mall form.php).
+  See on näidisenda tehtud ja samal põhimõttel tuleb teha kõigi ülejäänud lehtede näitamine.
+  Kõik päringud võtab vastu index.php (Front Controller muster).
+
+  Kui kasutaja valib värvi ja vajutab "Edasi" saadetakse vorm POST päringuga
+  ja näidatakse lehte tingimuste kinnitamise võimalusega (mall confirm.php).
+
+  Kui kasutaja jätab valiku tegemata ja vajutab "Edasi", siis näidatakse veateadet
+  samal lehel (mall confirm.php, konstant ERROR_MESSAGE).
+
+  Kui kasutaja teeb valiku ja vajutab "Edasi", toimub ümbersuunamine lehele,
+  millel on tekst valitud värviga (POST-REDIRECT-GET muster ja mall final.php).
+
+Ülesanne 4 (17 punkti)
+
+  Failis ex4/ex4.php on kood, mis teeb andmebaasi ühenduse ja käivitab failis data.sql
+  olevad SQL laused. Need SQL laused sisaldavad infot arendajate ja tööülesannete kohta.
+
+  Teie ülesanne on kirjutatda lõpuni SQL päring ja kood, nii et programm väljastaks iga
+  arendaja kohta Developer klassi objekti, milles on arendaja nimi ja temale kuuluvad
+  tööülesanded (Ticket klassi objektid).
+
+  Kui arendajal ühtegi ülesannet pole, siis tema kohta objekti ei tehta. Ka päring ei tohiks
+  tagastada arendajaid, kellel ühtegi ülesannet pole.
+
+  Arendajad peab tagastama sellises järjestuses nagu päring need tagastab (sorteeritud
+  nime järgi kahanevalt).
+
+  Andmebaasina kasutatakse mälupõhist andmebaasi ja on võimalik, et teie Php seadistuses
+  pole vastavat draiverit automaatselt laetud. Sellisel juhul peaksite koodi käivitama nii:
+
+    php -d extension=pdo_sqlite ex4/ex4.php # programm
+
+    php -d extension=pdo_sqlite ex4/tests.php # testid, mis käivitavad programmi ise.
